@@ -1,0 +1,26 @@
+<div class="container">
+ <div class="row">
+   <%  @Blog.each do |single| %>  
+   <div class="col-md-4">
+
+   <div class="card" style="width: 18rem;">
+     <div class="Card-body">
+      <h5 class="card-title"> <%= link_to single.title, blog_path(single) %>  </h5> 
+      <p class="card-text"> <%= single.content %></p>
+      <%= link_to "view",blog_path(single),class: 'btn btn-outline-primary' %>
+      <%= link_to "edit", edit_blog_path(single), class:'btn btn-outline-primary' %>
+      <%= link_to "destory", blog_path(single),class:'btn btn-outline-danger ', 
+                                         method: :DELETE ,
+                                          data:{confirm:'are you sure ?'}%>
+     </div>
+    </div>
+    <br>
+    </div>                                          
+ <%end%>
+
+ </div>
+
+
+
+   
+ </div>
